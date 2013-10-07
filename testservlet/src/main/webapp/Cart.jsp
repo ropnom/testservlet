@@ -25,7 +25,7 @@
   <td><b><%= anOrder.getQuantity() %></b></td>
   <td>
    <form name="deleteForm"
-    action="/examples/servlet/ShoppingServlet"
+    action="/testservlet/ShoppingServlet"
     method="POST">
    <input type="submit" value="Delete">
    <input type="hidden" name= "delindex" value='<%= index %>'>
@@ -37,7 +37,7 @@
   </table>
   <p>
   <form name="checkoutForm"
-    action="/examples/servlet/ShoppingServlet"
+    action="/testservlet/ShoppingServlet"
     method="POST">
     <input type="hidden" name="action" value="CHECKOUT">
     <input type="submit" name="Checkout" value="Checkout">

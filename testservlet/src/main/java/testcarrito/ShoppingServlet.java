@@ -24,11 +24,19 @@ public class ShoppingServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
+		//Cargamos la sesion que nos pasa el navegador
 		HttpSession session = req.getSession(false);
+		
+		//si no existe damos un erro alguna pirola nos intenta hacer el navegador
 		if (session == null) {
+			//ya nohacenada mas es como un brake
 			res.sendRedirect("http://localhost:8080/error.html");
 		}
+		
+		//cargamos los valores del vector 
 		Vector buylist = (Vector) session.getValue("shopping.shoppingcart");
+		
+		//cargamos el valor de la accion
 		String action = req.getParameter("action");
 		if (!action.equals("CHECKOUT")) {
 			if (action.equals("DELETE")) {
@@ -74,7 +82,7 @@ public class ShoppingServlet extends HttpServlet {
 			int n = amount.indexOf('.');
 			amount = amount.substring(0, n + 3);
 			req.setAttribute("amount", amount);
-			String url = "/shopping/Checkout.jsp";
+			String url = "/Checkout.jsp";
 			ServletContext sc = getServletContext();
 			RequestDispatcher rd = sc.getRequestDispatcher(url);
 			rd.forward(req, res);
