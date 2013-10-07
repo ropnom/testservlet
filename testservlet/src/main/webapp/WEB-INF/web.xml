@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>testservlet.servlet.TestServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ShoppingServlet</servlet-name>
+  	<display-name>ShoppingServlet</display-name>
+  	<description></description>
+  	<servlet-class>testcarrito.ShoppingServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>TestServlet</servlet-name>
   	<url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShoppingServlet</servlet-name>
+  	<url-pattern>/ShoppingServlet</url-pattern>
   </servlet-mapping>
 </web-app>
